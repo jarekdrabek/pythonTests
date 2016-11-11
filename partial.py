@@ -1,3 +1,8 @@
+#ITERATOR -> LOOPING UNTIL SENTINEL VALUE
+print "\nITERATOR -> LOOPING UNTIL SENTINEL VALUE:"
 from functools import partial
-
-# partial(func_name, arg1, arg2)
+f = open('file1','r')
+blocks = []
+for block in iter(partial(f.read, 32),''):
+    blocks.append(block)
+print blocks

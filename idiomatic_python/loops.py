@@ -1,14 +1,27 @@
+#FOR with ELSE
+colors = ['red', 'blue', 'green', "violet"]
+def find(sequence, target):
+    print "\nFOR with ELSE:"
+    for i, item in enumerate(sequence):
+        if target in item:
+            break
+    else:
+        return -1
+    return i
 
+print find(colors, "ee")
+print find(colors, "ble")
 
+#ITERATOR EXAMPLE
+print "\nITERATOR EXAMPLE:"
+colors = ['red', 'blue', 'green', "violet"]
+for block in iter(colors):
+    if "ee" not in block:
+        print block
 
-#ITERATOR -> LOOPING UNTIL SENTINEL VALUE
-print "\nITERATOR -> LOOPING UNTIL SENTINEL VALUE:"
-from functools import partial
-f = open('file1','r')
-blocks = []
-for block in iter(partial(f.read, 32),''):
-    blocks.append(block)
-print blocks
+# iter(...)
+# iter(collection) -> iterator
+# iter(callable, sentinel) -> iterator
 
 
 #CUSTOM SORT ORDER
