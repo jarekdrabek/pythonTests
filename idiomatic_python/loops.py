@@ -42,7 +42,7 @@ colors = ['red', 'blue', 'green']
 for col  in sorted(colors):
     print col
 
-#IZIP
+#IZIP (in favor of ZIP, operates on iterator, not creating the whole lista at the time)
 from itertools import izip
 colors = ['red', 'blue', 'green']
 names = ['rachel', 'ben', 'mark', 'tom']
@@ -50,7 +50,7 @@ print "\nIZIP:"
 for col, name in izip(colors, names):
     print name, '-->', col
 
-#ZIP
+#ZIP (it creates the dictionary in advance)
 colors = ['red', 'blue', 'green']
 names = ['rachel', 'ben', 'mark', 'tom']
 print "\nZIP:"
