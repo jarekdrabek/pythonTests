@@ -1,3 +1,4 @@
+from collections import defaultdict
 from itertools import izip
 
 dictionary = {'matthew': 'blue', 'rachel': 'green', 'raymond': 'red'}
@@ -31,3 +32,32 @@ names = {'matthew', 'rachel', 'raymond'}
 colors = {'blue', 'green', 'red'}
 d = dict(izip(names, colors))
 print d
+
+print "\nCOUNTING with DICTIONARIES:"
+colors = ['red', 'green', 'red', 'blue', 'green', 'red']
+d = {}
+for col in colors:
+    d[col] = d.get(col, 0) + 1
+print d
+
+print "\nDEFAULTDICT example:"
+colors = ['red', 'green', 'red', 'blue', 'green', 'red']
+d = defaultdict(int)
+for col in colors:
+    d[col] += 1
+print d
+
+print "\nSETDEFAULT - GROUPING dict values example: @DEPRECATED"
+names = ['Marek', 'Jacek', 'Jan', 'Tomasz', 'Lukasz', 'Marian']
+d = {}
+for name in names:
+    key = len(name)
+    d.setdefault(key, []).append(name)
+print d
+
+# the same is possible with defaultdict
+dd = defaultdict(list)
+for name in names:
+    key = len(name)
+    dd[key].append(name)
+print dd
